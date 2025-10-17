@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Site — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center">
+        <div class="brand">Site Toolkit</div>
+        <nav aria-label="Main navigation">
+          <div class="nav-links" id="navLinks">
+            <a href="home.html" class="active">Home</a>
+            <a href="documents.html">Documents</a>
+            <a href="floorplan.html">Floor Plan</a>
+            <a href="3dmodel.html">3D Model</a>
+            <a href="sops.html">SOPs</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <main class="container">
+      <div id="home" class="grid" tabindex="-1">
+        <section class="card">
+          <h1>Welcome</h1>
+          <p>In Your Interface is an IT consulting company that specializes in designing and building modern, reliable technology solutions for schools, businesses, and organizations. We focus on network setup, troubleshooting, system upgrades, and improving performance and security. Our goal is to help clients get the most out of their technology by providing expert advice, customized solutions, and hands-on support. With a strong focus on quality and efficiency, In Your Interface ensures every project is completed on time and meets our clients’ needs..</p>
+          <h2 style="margin-top:16px">Quick actions</h2>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <a class="btn" href="documents.html">Documents</a>
+            <a class="btn" href="floorplan.html">Floor Plan</a>
+          </div>
+        </section>
+        <aside class="card">
+          <h2>Status</h2>
+          <p class="muted">Placeholders show where to add files. Try clicking "Open Documents" in the header to jump there.</p>
+          <hr style="opacity:0.06;margin:12px 0" />
+          <div class="file-list">
+            <div class="file"><div>Latest doc.pdf</div><a class="btn" href="#">Open</a></div>
+            <div class="file"><div>Site-plan.png</div><a class="btn" href="#">Open</a></div>
+            <div class="file"><div>SOP-Template.docx</div><a class="btn" href="#">Open</a></div>
+          </div>
+        </aside>
+      </div>
+      <footer>
+        <div>Built as a starter — edit the HTML to add real files or connect to a backend.</div>
+      </footer>
+    </main>
+  </main>
+</body>
+</html>

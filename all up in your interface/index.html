@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home · Documents · Floor Plan · 3D Model · SOPs</title>
+  <meta name="description" content="Simple single-file site with navigation for Documents, Home, Floor Plan, 3D Model and SOPs." />
+  <style>
+    :root{ --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#3797f3; --glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,#071027 0%, #0b1220 100%)}
+    header{position:sticky;top:0;backdrop-filter:blur(6px);background:linear-gradient(180deg, rgba(11,18,32,0.6), rgba(11,18,32,0.3));border-bottom:1px solid rgba(255,255,255,0.03);z-index:50}
+    .container{max-width:1100px;margin:0 auto;padding:18px}
+    nav{display:flex;gap:12px;align-items:center}
+    .brand{font-weight:700;letter-spacing:0.6px;font-size:18px;color:var(--accent)}
+    .nav-links{display:flex;gap:8px;margin-left:20px}
+    .nav-links a{padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600;font-size:14px}
+    .nav-links a.active, .nav-links a:hover{background:var(--glass);color:#fff}
+    main{padding:28px 12px}
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    h1,h2{margin:0 0 12px 0}
+    p{color:var(--muted);line-height:1.45}
+    /* responsive */
+    @media (max-width:880px){.grid{grid-template-columns:1fr} .nav-links{display:none} .mobile-menu{display:inline-flex}}
+    .mobile-menu{display:none}
+    /* small components */
+    .file-list{display:flex;flex-direction:column;gap:8px}
+    .file{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:rgba(255,255,255,0.01)}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    footer{opacity:0.7;padding:22px;text-align:center;color:var(--muted)}
+    iframe{width:100%;height:420px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:#071427}
+    .placeholder{height:300px;border-radius:10px;background:linear-gradient(90deg,#091024,#071427);display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px dashed rgba(255,255,255,0.03)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center">
+        <div class="brand">Site Toolkit</div>
+        <nav class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="documents.html">Documents</a>
+          <a href="floorplan.html">Floor Plan</a>
+          <a href="3dmodel.html">3D Model</a>
+          <a href="sops.html">SOPs</a>
+        </nav>
+        <nav aria-label="Main navigation">
+          <button class="mobile-menu" aria-label="Toggle menu" onclick="toggleMenu()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="documents.html">Documents</a>
+            <a href="floorplan.html">Floor Plan</a>
+            <a href="3dmodel.html">3D Model</a>
+            <a href="sops.html">SOPs</a>
+          </div>
+        </nav>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a href="documents.html" class="btn">Open Documents</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="home" class="grid" tabindex="-1">
+      <section class="card">
+        <h1>Welcome</h1>
+        <p>This small site provides quick access to the main areas you asked for: Documents, Floor Plan, 3D Model and SOPs. It's a single-file starter — drop your assets into the placeholders or link to external files. Use the top navigation to jump between sections. Mobile-friendly and accessible.</p>
+        <h2 style="margin-top:16px">Quick actions</h2>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <a class="btn" href="documents.html">Documents</a>
+          <a class="btn" href="floorplan.html">Floor Plan</a>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Status</h2>
+        <p class="muted">Placeholders show where to add files. Try clicking "Open Documents" in the header to jump there.</p>
+        <hr style="opacity:0.06;margin:12px 0" />
+        <div class="file-list">
+          <div class="file"><div>Latest doc.pdf</div><a class="btn" href="#">Open</a></div>
+          <div class="file"><div>Site-plan.png</div><a class="btn" href="#">Open</a></div>
+          <div class="file"><div>SOP-Template.docx</div><a class="btn" href="#">Open</a></div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="documents" class="card" style="margin-top:22px" tabindex="-1">
+      <h2>Documents</h2>
+      <p>Organize your PDFs, images and manuals here. Replace the sample list with real links or upload logic if you build a backend.</p>
+      <div style="margin-top:12px" class="file-list">
+        <div class="file"><div>Network-Inventory.xlsx</div><a class="btn" href="#">Download</a></div>
+        <div class="file"><div>Emergency-Contacts.pdf</div><a class="btn" href="#">View</a></div>
+        <div class="file"><div>Maintenance-Log.csv</div><a class="btn" href="#">Download</a></div>
+      </div>
+    </section>
+
+    <section id="floorplan" class="card" style="margin-top:22px" tabindex="-1">
+      <h2>Floor Plan</h2>
+      <p>Embed an image, SVG or interactive floorplan here. Example below shows a simple placeholder and an iframe area where an external plan viewer could be embedded.</p>
+      <div style="display:grid;grid-template-columns:1fr 260px;gap:12px;margin-top:12px">
+        <div>
+          <div class="placeholder">Floor plan image placeholder — replace with <code>&lt;img src="/path/to/plan.png"&gt;</code></div>
+        </div>
+        <aside>
+          <h3>Controls</h3>
+          <p class="muted">Legend, layers and quick links.</p>
+          <ul>
+            <li>Layer: Electrical</li>
+            <li>Layer: Networking</li>
+            <li>Layer: Furniture</li>
+          </ul>
+          <a class="btn" href="#">Download Plan</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="3dmodel" class="card" style="margin-top:22px" tabindex="-1">
+      <h2>3D Model</h2>
+      <p>Embed a 3D viewer (Sketchfab, modelviewer, or a custom WebGL app). Below is a neutral iframe placeholder — replace the <code>src</code> with your 3D viewer URL or use <code>&lt;model-viewer&gt;</code>.</p>
+      <div style="margin-top:12px">
+        <iframe title="3D model viewer placeholder" srcdoc="<p style='color:#9aa4b2;font-family:system-ui;'>3D viewer placeholder — replace iframe src with your model URL (Sketchfab/embed or your viewer)</p>"></iframe>
+      </div>
+    </section>
+
+    <section id="sops" class="card" style="margin-top:22px;margin-bottom:18px" tabindex="-1">
+      <h2>Standard Operating Procedures (SOPs)</h2>
+      <p>Store your SOPs here. You can list them, version them and link to PDF/Docx files. Example items below.</p>
+      <ol style="margin-top:12px;color:var(--muted)">
+        <li>Access Control SOP — v1.2</li>
+        <li>Backup & Recovery — v3.0</li>
+        <li>Incident Response — Draft</li>
+      </ol>
+      <div style="margin-top:12px"><a class="btn" href="#">Add new SOP</a></div>
+    </section>
+
+    <footer>
+      <div>Built as a starter — edit the HTML to add real files or connect to a backend.</div>
+    </footer>
+  </main>
+
+  <script>
+    // Smooth navigation + active link handling
+    const links = document.querySelectorAll('#navLinks a');
+    function setActive(target){
+      links.forEach(l=> l.classList.toggle('active', l.dataset.target===target));
+    }
+    // on click smooth scroll
+    links.forEach(l=> l.addEventListener('click', e=>{
+      e.preventDefault();
+      const id = l.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); setActive(id); history.replaceState(null,'', '#'+id); el.focus(); }
+    }));
+    // handle direct hash on load
+    window.addEventListener('load', ()=>{
+      const h = location.hash.replace('#','') || 'home';
+      const el = document.getElementById(h);
+      if(el){ el.scrollIntoView(); setActive(h); }
+    });
+
+    // keyboard accessibility: Left/Right to cycle nav
+    document.addEventListener('keydown', (e)=>{
+      const activeIndex = Array.from(links).findIndex(a=>a.classList.contains('active'));
+      if(e.key === 'ArrowRight'){
+        const next = (activeIndex+1) % links.length; links[next].click();
+      }
+      if(e.key === 'ArrowLeft'){
+        const prev = (activeIndex-1 + links.length) % links.length; links[prev].click();
+      }
+    });
+  </script>
+</body>
+</html>

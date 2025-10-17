@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Interface — Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;align-items:center">
+                <div class="brand">Site Toolkit</div>
+                <nav aria-label="Main navigation">
+                    <button class="mobile-menu" aria-label="Toggle menu" onclick="toggleMenu()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div class="nav-links" id="navLinks">
+                        <a href="index.html" class="active">Home</a>
+                        <a href="documents.html">Documents</a>
+                        <a href="floorplan.html">Floor Plan</a>
+                        <a href="3dmodel.html">3D Model</a>
+                        <a href="sops.html">SOPs</a>
+                    </div>
+                </nav>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+                <a href="documents.html" class="btn">Open Documents</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="grid">
+            <section class="card">
+                <h1>Welcome</h1>
+                <p>This small site provides quick access to the main areas you asked for: Documents, Floor Plan, 3D Model and SOPs.</p>
+                <h2 style="margin-top:16px">Quick actions</h2>
+                <div style="display:flex;gap:8px;margin-top:8px">
+                    <a class="btn" href="documents.html">Documents</a>
+                    <a class="btn" href="floorplan.html">Floor Plan</a>
+                </div>
+            </section>
+            <aside class="card">
+                <h2>Status</h2>
+                <p class="muted">Quick access to your recent documents.</p>
+                <hr style="opacity:0.06;margin:12px 0" />
+                <div class="file-list">
+                    <div class="file">
+                        <div>Latest doc.pdf</div>
+                        <a class="btn" href="#">Open</a>
+                    </div>
+                    <div class="file">
+                        <div>Site-plan.png</div>
+                        <a class="btn" href="#">Open</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div>Built as a starter — edit the HTML to add real files or connect to a backend.</div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('show');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (!navLinks.contains(e.target) && !mobileMenu.contains(e.target)) {
+                navLinks.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
